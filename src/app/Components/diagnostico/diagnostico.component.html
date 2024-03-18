@@ -1,0 +1,12 @@
+<app-menu></app-menu>
+
+<div class="diagnostico-detail-container">
+  <h1>Diagnósticos</h1>
+  <div class="diagnostico-info" *ngFor="let diagnostico of diagnosticos">
+    <h2>Detalles del Diagnóstico</h2>
+    <p><strong>ID del Diagnóstico:</strong> {{ diagnostico.diagnosticoID }}</p>
+    <p><strong>Valoración del Especialista:</strong> {{ diagnostico.valoracionEspecialista }}</p>
+    <p><strong>Enfermedad:</strong> {{ diagnostico.enfermedad }}</p>
+    <p><strong>ID de la Cita:</strong> {{ diagnostico.citaID }}</p>
+  </div>
+</div>

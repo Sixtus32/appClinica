@@ -1,0 +1,12 @@
+<app-menu></app-menu>
+
+<div class="patient-detail-container">
+  <h1>Citas</h1>
+  <div class="cita-info" *ngFor="let cita of citas">
+    <h2>Info. Paciente | Medico</h2>
+    <p><strong>Nombre Completo Del Paciente:</strong> {{ nombreCompletoPaciente(cita.pacienteID) }}</p>
+    <p><strong>Medico:</strong> {{ nombreCompletoMedico(cita.medicoID) }}</p>
+    <p><strong>Fecha de la cita:</strong> {{ cita.fechaHora }}</p>
+    <p><strong>Motivo de citación:</strong> {{ cita.motivoCita }}</p>
+  </div>
+</div>

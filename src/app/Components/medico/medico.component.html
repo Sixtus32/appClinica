@@ -1,0 +1,84 @@
+<app-menu></app-menu>
+
+<div class="container">
+    <div class="profile-body">
+        <!-- Perfil del paciente -->
+        <div class="profile-details">
+            <div class="photo">
+                <img src="assets/perfil.png" alt="Foto del paciente">
+            </div>
+            <div class="user-field">
+                <label for="nombre">Nombre:</label>
+                <input type="text" name="nombre" id="nombre" [(ngModel)]="editedNombre">
+                <br>
+                <label for="apellidos">Apellido:</label>
+                <input type="text" name="apellidos" id="apellidos" [(ngModel)]="editedApellidos">
+                <br>
+                <label for="usuarioNom">Nombre de usuario :</label>
+                <input type="text" name="usuarioNom" id="usuarioNom" [(ngModel)]="editedUsuarioNom">
+                <br>
+                <label for="clave">Clave de Usuario :</label>
+                <input type="text" name="clave" id="clave" [(ngModel)]="editedClave">
+                <br>
+                <label for="numColegiado">Número del Colegiado :</label>
+                <input type="text" name="numColegiado" id="numColegiado" [(ngModel)]="editedNumColegiado">
+                <br>
+            </div>
+            <!-- Botón para guardar cambios -->
+            <sx-button-dynamic mat-raised-button variant="primary" class="save-button" (click)="guardarCambios()">Guardar Cambios
+            <i class="ri-save-3-line"></i></sx-button-dynamic>
+        </div>
+        <!-- Lista de medicos -->
+        <div class="content">
+            <h2>Nuestros Medicos</h2>
+            <ul class="sortable-list">
+                <li class="item" *ngFor="let medico of medicos" (click)="mostrarDetalles(medico)">
+                    <div class="details">
+                        <img src="assets/perfil.png" alt="foto del paciente">
+                        <span>{{ medico.nombre }} {{ medico.apellidos }}</span>
+                    </div>
+                    <div class="item-action">
+                        <sx-button-dynamic (click)="goToMedico(medico.id)">
+                            <i class="ri-eye-line"></i>
+                        </sx-button-dynamic>
+                        <!-- Botón para eliminar -->
+                        <sx-button-dynamic mat-icon-button variant="alert" (click)="eliminarMedico(medico?.id)">
+                            <mat-icon>delete</mat-icon>
+                        </sx-button-dynamic>
+                    </div>
+                </li>
+            </ul>
+            <!-- Botón de modal para agregar paciente -->
+            <sx-button-dynamic mat-raised-button color="primary" class="add-patient-button" (click)="openModal()">Registrar Medico <i class="ri-add-large-line"></i></sx-button-dynamic>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal" *ngIf="showModal">
+  <div class="modal-content">
+    <form [formGroup]="formularioMedico" class="add-paciente-form">
+      <label for="nombre">Nombre:</label>
+      <input matInput type="text" formControlName="nombre">
+      
+      <label for="apellidos">Apellido:</label>
+      <input matInput type="text" formControlName="apellidos">
+      
+      <label for="usuarioNom">Nombre Usuario:</label>
+      <input matInput type="text" formControlName="usuarioNom">
+      
+      <label for="clave">Clave del paciente:</label>
+      <input matInput type="password" formControlName="clave">
+      
+      <label for="numColegiado">Número del colegiado :</label>
+      <input matInput type="text" formControlName="numColegiado">
+      
+      <div class="btn-form">
+        <button mat-raised-button color="primary" (click)="onClickSubmitForm()">Registrar Paciente</button>
+        <button mat-button color="accent" (click)="closeModal()">Cancelar</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+

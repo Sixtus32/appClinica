@@ -1,0 +1,26 @@
+
+<app-menu></app-menu>
+<div class="patient-detail-container">
+  <h1>Detalles del Paciente</h1>
+  <div class="patient-info">
+    <h2>{{ nombre }} {{ apellidos }}</h2>
+    <p><strong>Nombre de usuario:</strong> {{ usuarioNom }}</p>
+    <p><strong>Número del Colegiado :</strong> {{ numColegiado }}</p>
+  </div>
+  <div class="appointment-info">
+    <h2>Citas del Medico</h2>
+    <ul>
+      <li *ngFor="let cita of medicoCitas">
+        <div class="appointment-details">
+          <p><strong>Fecha y Hora:</strong> {{ cita.fechaHora }}</p>
+          <p><strong>Motivo:</strong> {{ cita.motivoCita }}</p>
+        </div>
+        <div class="doctor-info">
+          <h3>Pacientes</h3>
+          <p><strong>Nombre:</strong> {{ getPacienteName(cita.medicoID) }}</p>
+          <!-- Puedes mostrar más detalles del médico si lo necesitas -->
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,37 @@
+/* Estilos para el contenedor principal */
+.patient-detail-container {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Estilos para el título */
+.patient-detail-container h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Estilos para la información de cada cita */
+.cita-info {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+/* Estilos para el título de cada cita */
+.cita-info h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+/* Estilos para los párrafos de información */
+.cita-info p {
+  margin-bottom: 5px;
+}
+
+/* Estilos para los párrafos de información que contienen datos importantes */
+.cita-info p strong {
+  font-weight: bold;
+}

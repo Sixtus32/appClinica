@@ -1,0 +1,37 @@
+/* Estilos para el contenedor principal */
+.diagnostico-detail-container {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Estilos para el título */
+.diagnostico-detail-container h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Estilos para la información de cada diagnóstico */
+.diagnostico-info {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+/* Estilos para el título de cada diagnóstico */
+.diagnostico-info h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+/* Estilos para los párrafos de información */
+.diagnostico-info p {
+  margin-bottom: 5px;
+}
+
+/* Estilos para los párrafos de información que contienen datos importantes */
+.diagnostico-info p strong {
+  font-weight: bold;
+}
